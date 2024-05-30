@@ -1,3 +1,6 @@
 [submodule "Plugins/UnrealImGui"]
 	path = Plugins/UnrealImGui
 	url = https://github.com/benui-dev/UnrealImGui.git
+[submodule "Plugins/ue-safemath"]
+	path = Plugins/ue-safemath
+	url = git@github.com:mikosz/ue-safemath.git
