@@ -8,6 +8,9 @@ public class AstroSim : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
+		PublicDependencyModuleNames.AddRange(new[]
+			{ "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "PhysicsCore", "Chaos", "ImGui" });
+
+		PrivateDefinitions.Add("IMPLOT_API=DLLIMPORT");
 	}
 }
