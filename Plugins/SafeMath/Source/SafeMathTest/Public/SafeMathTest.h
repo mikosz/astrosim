@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-class FSafeMathUHTModule : public IModuleInterface
+class FSafeMathTestModule : public IModuleInterface
 {
 public:
     virtual void StartupModule() override;
