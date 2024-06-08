@@ -4,3 +4,6 @@
 [submodule "Plugins/ue-safemath"]
 	path = Plugins/ue-safemath
 	url = git@github.com:mikosz/ue-safemath.git
+[submodule "Plugins/SafeMath"]
+	path = Plugins/SafeMath
+	url = git@github.com:mikosz/ue-safemath.git
