@@ -5,12 +5,17 @@
 #include "CoreMinimal.h"
 
 #include "Components/ActorComponent.h"
+#include "SafeMath/Quantity/Mass.h"
+#include "SafeMath/Quantity/QuantityLiterals.h"
 
 #include "GravitationalComponent.generated.h"
+
+using namespace SafeMath::QuantityLiterals;
 
 class AGravitationalSystem;
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+
 class ASTROSIM_API UGravitationalComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -25,7 +30,7 @@ public:
 	TObjectPtr<AActor> ParentGravitationalBody = nullptr;
 
 	UPROPERTY(EditAnywhere)
-	double MassKg = 1.;
+	FMass Mass = 0_kg;
 
 	UPROPERTY(EditAnywhere)
 	double RadiusM = 1.;
@@ -36,7 +41,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	double OrbitSemiMajorAxis_Km = 0.;
 
-	double GetSimulatedMass() const;
+	FMass GetSimulatedMass() const;
 
 	double GetSimulatedRadius() const;
 

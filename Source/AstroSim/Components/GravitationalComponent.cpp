@@ -5,7 +5,6 @@
 #include "EngineUtils.h"
 #include "GravitationalSystem.h"
 #include "Math/UnitConversion.h"
-#include "PhysicsProxy/SingleParticlePhysicsProxy.h"
 
 // Sets default values for this component's properties
 UGravitationalComponent::UGravitationalComponent()
@@ -16,9 +15,9 @@ UGravitationalComponent::UGravitationalComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-double UGravitationalComponent::GetSimulatedMass() const
+FMass UGravitationalComponent::GetSimulatedMass() const
 {
-	return MassKg * GetScale(3);
+	return Mass * GetScale(3);
 }
 
 double UGravitationalComponent::GetSimulatedRadius() const
@@ -43,7 +42,7 @@ void UGravitationalComponent::BeginPlay()
 	}
 
 	auto BodyInstance = OwnerPrimitiveComp->GetBodyInstance();
-	BodyInstance->SetMassOverride(GetSimulatedMass());
+	BodyInstance->SetMassOverride(GetSimulatedMass().GetValue<SafeMath::Units::FKilograms>());
 
 	if (!IsValid(ParentGravitationalBody))
 	{
@@ -126,7 +125,8 @@ void UGravitationalComponent::TickComponent(
 			FUnitConversion::Convert(UnscaledDistance_Cm, EUnit::Centimeters, EUnit::Meters);
 
 		const auto Acceleration_MPerSSq =
-			(GravitationalConstant * OtherGravitationalComp->MassKg) / (UnscaledDistance_M * UnscaledDistance_M);
+			(GravitationalConstant * OtherGravitationalComp->Mass.GetValue<SafeMath::Units::FKilograms>())
+			/ (UnscaledDistance_M * UnscaledDistance_M);
 		const auto Acceleration_CmPerSSq = FUnitConversion::Convert(
 			Acceleration_MPerSSq, EUnit::MetersPerSecondSquared, EUnit::CentimetersPerSecondSquared);
 
