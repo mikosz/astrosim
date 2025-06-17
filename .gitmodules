@@ -1,9 +1,6 @@
 [submodule "Plugins/SafeMath"]
 	path = Plugins/SafeMath
 	url = git@github.com:mikosz/ue-safemath.git
-[submodule "Plugins/ImGuiInspector"]
-	path = Plugins/ImGuiInspector
-	url = git@github.com:mikosz/imgui-unreal-inspector.git
 [submodule "Plugins/ImGui"]
 	path = Plugins/ImGui
 	url = git@github.com:mikosz/ImGui.git
