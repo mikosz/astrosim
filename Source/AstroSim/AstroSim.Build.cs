@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 2025 Mikołaj Radwan, All Rights Reserved.
 
 using UnrealBuildTool;
 
@@ -8,11 +8,12 @@ public class AstroSim : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PrivateDependencyModuleNames.AddRange(new string[] { "SafeMath" });
+		PrivateDependencyModuleNames.AddRange(new[]
+			{ "SafeMath", "SafeMathEditor", "ImGuiDeveloperToolkitSubsystem", "ImGuiDeveloperToolkitWidgets" });
 
 		PublicDependencyModuleNames.AddRange(new[]
-			{ "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "PhysicsCore", "Chaos", "ImGui" });
-
-		PrivateDefinitions.Add("IMPLOT_API=DLLIMPORT");
+		{
+			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "PhysicsCore", "Chaos", "ImGui"
+		});
 	}
 }

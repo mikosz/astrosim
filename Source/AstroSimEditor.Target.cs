@@ -1,7 +1,6 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 2025 Mikołaj Radwan, All Rights Reserved.
 
 using UnrealBuildTool;
-using System.Collections.Generic;
 
 public class AstroSimEditorTarget : TargetRules
 {

@@ -1,9 +1,12 @@
-[submodule "Plugins/UnrealImGui"]
-	path = Plugins/UnrealImGui
-	url = https://github.com/benui-dev/UnrealImGui.git
-[submodule "Plugins/ue-safemath"]
-	path = Plugins/ue-safemath
-	url = git@github.com:mikosz/ue-safemath.git
 [submodule "Plugins/SafeMath"]
 	path = Plugins/SafeMath
 	url = git@github.com:mikosz/ue-safemath.git
+[submodule "Plugins/ImGuiInspector"]
+	path = Plugins/ImGuiInspector
+	url = git@github.com:mikosz/imgui-unreal-inspector.git
+[submodule "Plugins/ImGui"]
+	path = Plugins/ImGui
+	url = git@github.com:mikosz/ImGui.git
+[submodule "Plugins/ImGuiDeveloperToolkit"]
+	path = Plugins/ImGuiDeveloperToolkit
+	url = git@github.com:mikosz/ImGuiDeveloperToolkit.git

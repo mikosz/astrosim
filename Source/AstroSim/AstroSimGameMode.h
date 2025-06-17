@@ -1,9 +1,11 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 2025 Mikołaj Radwan, All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
+
 #include "GameFramework/GameModeBase.h"
+
 #include "AstroSimGameMode.generated.h"
 
 UCLASS(minimalapi)
@@ -14,6 +16,3 @@ class AAstroSimGameMode : public AGameModeBase
 public:
 	AAstroSimGameMode();
 };
-
-
-

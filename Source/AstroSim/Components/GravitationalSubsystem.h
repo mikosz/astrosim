@@ -1,4 +1,4 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Copyright 2025 Mikołaj Radwan, All Rights Reserved.
 
 #pragma once
 
@@ -18,7 +18,4 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual TStatId GetStatId() const override;
-
-private:
-	void ShowUI() const;
 };
