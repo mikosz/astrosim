@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 
 #include "ImGuiDeveloperToolkit/ImGuiDeveloperToolkitTool.h"
+#include "ImGuiDeveloperToolkit/PropertyInspector.h"
 
 #include "GravitationalSubsystemDeveloperToolkitTool.generated.h"
 
@@ -17,4 +18,7 @@ public:
 	virtual EImGuiDeveloperToolkitToolContext GetContext() const override;
 	virtual void Tick(
 		float DeltaTime, bool& bInOutShow, EImGuiDeveloperToolkitToolContext Context, UWorld* World) override;
+
+private:
+	ImGuiDeveloperToolkit::PropertyInspector::FInspectorSetup InspectorSetup;
 };
