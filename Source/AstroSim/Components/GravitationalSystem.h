@@ -50,12 +50,6 @@ public:
 	UPROPERTY(EditAnywhere)
 	double ScaleExp = 1.;
 
-	// #TODO_dontcommit
-	UPROPERTY(EditAnywhere, Instanced)
-	UExample* ExamplePtr = nullptr;
-	UPROPERTY(EditAnywhere, Instanced)
-	TObjectPtr<const UExample> ConstExamplePtr = nullptr;
-
 	AGravitationalSystem();
 
 	bool IsPlaying() const;
@@ -65,9 +59,4 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void TickActor(float DeltaTime, ELevelTick TickType, FActorTickFunction& ThisTickFunction) override;
-
-	// #TODO_dontcommit
-	virtual void PreEditChange(FProperty* PropertyThatWillChange) override;
-
-	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 };
