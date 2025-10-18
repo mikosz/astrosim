@@ -72,12 +72,6 @@ void UGravitationalSubsystemDeveloperToolkitTool::Tick(
 
 		ImGui::Separator();
 
-		ImGui::Checkbox("Recurse into structs", &InspectorSetup.bRecurseIntoStructs);
-		ImGui::Checkbox("Recurse into objects", &InspectorSetup.bRecurseIntoObjects);
-		ImGui::Checkbox("Include deprecated", &InspectorSetup.bIncludeDeprecated);
-
-		ImGui::Separator();
-		
 		PropertyInspector::Inspect(TCHAR_TO_ANSI(*System->GetActorLabel()), *System, InspectorSetup);
 		PropertyInspector::Inspect(
 			TCHAR_TO_ANSI(*System->GetActorLabel()), const_cast<const AGravitationalSystem&>(*System), InspectorSetup);
