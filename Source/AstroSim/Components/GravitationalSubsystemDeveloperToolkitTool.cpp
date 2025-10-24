@@ -72,68 +72,14 @@ void UGravitationalSubsystemDeveloperToolkitTool::Tick(
 
 		ImGui::Separator();
 
+		// #TODO_dontcommit
+		InspectorSetup.ChildObjectSetup.bShowCategories = true;
+		InspectorSetup.ChildObjectSetup.bShowHierarchy = false;
+		InspectorSetup.OnlyChildrenOf = AActor::StaticClass();
+		
 		PropertyInspector::Inspect(TCHAR_TO_ANSI(*System->GetActorLabel()), *System, InspectorSetup);
 		PropertyInspector::Inspect(
 			TCHAR_TO_ANSI(*System->GetActorLabel()), const_cast<const AGravitationalSystem&>(*System), InspectorSetup);
 	}
 }
 
-// #TODO_dontcommit
-#if 0
-
-// struct
-
-USTRUCT(DisplayName = "Strukturka wewnętrzna")
-struct ASTROSIM_API FInspectorTestInternalStruct
-{
-	GENERATED_BODY()
-
-	UPROPERTY(DisplayName = "Intidżer 1")
-	int32 Integer = 0;
-
-	UPROPERTY(DisplayName = "Intidżer 2")
-	int32 Integer2 = 0;
-};
-
-UCLASS(DisplayName = "Klaska")
-class ASTROSIM_API UInspectorTestClass : public UObject
-{
-	GENERATED_BODY()
-public:
-	UPROPERTY(DisplayName = "Intidżer")
-	int32 Integer = 0;
-};
-
-USTRUCT(DisplayName = "Strukturka")
-struct ASTROSIM_API FInspectorTestStruct
-{
-	GENERATED_BODY()
-
-	UPROPERTY(DisplayName = "Intidżer")
-	int32 Integer = 0;
-
-	UPROPERTY(DisplayName = "Tablica")
-	TArray<int32> Integers{3, 42, 666};
-
-	UPROPERTY(DisplayName = "Strukturka")
-	FInspectorTestInternalStruct InternalStruct;
-
-	UPROPERTY(DisplayName = "Tablica strukturek")
-	TArray<FInspectorTestInternalStruct> InternalStructs{{}, {}, {}};
-
-	UPROPERTY(DisplayName = "Wskaźniczek na obiekt typu testowego")
-	TObjectPtr<UInspectorTestClass> TestObjectActual = NewObject<UInspectorTestClass>();
-
-	UPROPERTY(DisplayName = "Wskaźniczek na obiekt typu testowego ale UObject")
-	TObjectPtr<UObject> TestObjectSuper = NewObject<UInspectorTestClass>();
-};
-
-
-// inspect
-SetNextWindowPosAndSizeWithinMainViewport(ImVec2{.6f, .1f}, ImVec2{.3f, .3f}, ImGuiCond_FirstUseEver);
-
-PropertyInspector::Inspect("S", S, this);
-
-PropertyInspector::Inspect("S but const", const_cast<const FInspectorTestStruct&>(S), this);
-
-#endif
