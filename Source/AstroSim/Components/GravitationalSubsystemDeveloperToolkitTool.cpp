@@ -73,8 +73,8 @@ void UGravitationalSubsystemDeveloperToolkitTool::Tick(
 		ImGui::Separator();
 
 		// #TODO_dontcommit
-		InspectorSetup.ChildObjectSetup.bShowCategories = true;
-		InspectorSetup.ChildObjectSetup.bShowHierarchy = false;
+		InspectorSetup.ObjectSetup.bShowCategories = true;
+		InspectorSetup.ObjectSetup.bShowHierarchy = false;
 		InspectorSetup.OnlyChildrenOf = AActor::StaticClass();
 		
 		PropertyInspector::Inspect(TCHAR_TO_ANSI(*System->GetActorLabel()), *System, InspectorSetup);
