@@ -7,3 +7,6 @@
 [submodule "Plugins/ImGuiDeveloperToolkit"]
 	path = Plugins/ImGuiDeveloperToolkit
 	url = git@github.com:mikosz/ImGuiDeveloperToolkit.git
+[submodule "Plugins/ZakazaneUtilities"]
+	path = Plugins/ZakazaneUtilities
+	url = git@github.com:mikosz/zakazane-utilities.git
